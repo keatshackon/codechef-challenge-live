@@ -16,7 +16,9 @@ int main(){
 		ll i = 0;
 		while(n){
 			string st = s.substr(i,i+4);
+			// taking only four bits
 			bitset<4> bits(st);
+			//bits will converted into Integer
     		int ab = bits.to_ulong();
     		char c = 'a' + ab;
     		res+=c;
