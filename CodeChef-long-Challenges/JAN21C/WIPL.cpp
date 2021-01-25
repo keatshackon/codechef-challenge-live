@@ -16,34 +16,44 @@ int main()
 	cin>>t;
 	while(t--){
 		cin>>n>>k;
-		vector<ll> v;
-		ll sum = 0;
+		vector<int> v;
+		
 		while(n--){
 			cin>>q;
 			v.push_back(q);
 		}
-		sort(v.begin(),v.end());
-		ll i = v.size()-1;
-		ll k1 = k;
-		while(i > = 0){
-			if(k > 0 ){
-				k = k - v[i]
-			}else{
-				i++;
+		sort(v.begin(),v.end(),greater<int>());
+		int i = 0;
+		int f = 1;
+		int w = 1;
+		ll sum = 0;
+		int cnt = 0;
+		for(i = 0; i < v.size();i++){
+			if(sum >= k){
+				f = 0;                            
 				break;
+			}else{
+				cnt++;
+				sum += v[i];
 			}
-			i-=2;
 		}
-		if(k!=0){
-			cout<<-1<<"\n";
+		// cout<<cnt<<" "<<i<<"\/n";
+		ll ss = sum;
+		sum = v[i];
+		ll te = 0;
+		for(;i<v.size();i++){
+			if(te <= k){
+				te+=v[i];
+				cnt++;
+			}else{
+				w = 0;
+			}
+		}
+		
+		if(f == 0 && te>=k || (ss + te) >= (2*k) || (f==0 && w==0)){
+			cout<<(cnt)<<"\n";
 		}else{
-			ll i = v.size()-2;
-			while(i > 0){
-			if(k1 > 0){
-					k1 = k1 - v[i];
-				}
-			}	
+			cout<<-1<<"\n";
 		}
-
 	}
 }
