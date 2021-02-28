@@ -43,25 +43,19 @@ int main() {
             }
         }
 
-        int cnt = 0;
-        int od = 0;
+        int cnt1 = 0;
+        int cnt2 = 0;
         for(auto q:map){
-            if(q.second  == 1){
-                cnt++;
-            }
-            if(q.second % 2 == 0){
-                od++;
-            }
+            cnt1 += q.second / 2;
+            cnt2 += q.second % 2;
         }
-        if(cnt == 0){
-            cout<<"YES\n";
-        }else{
-            if(cnt > od){
-                cout<<"NO\n";
-            }else{
+
+            if(cnt1 >= cnt2){
                 cout<<"YES\n";
+            }else{
+                cout<<"NO\n";
             }
-        }
+
 
     }
     return 0;
