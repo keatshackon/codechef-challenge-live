@@ -17,7 +17,6 @@ int prime(int n) {
 
 int main() {
 
-
 	ll n;
 	cin >> n;
 
