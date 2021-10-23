@@ -1,0 +1,5 @@
+1>> PINS(Strike or Spare)
+
+2>> MGCSET
+
+3>> 
